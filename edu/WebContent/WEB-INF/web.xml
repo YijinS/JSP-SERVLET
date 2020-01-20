@@ -34,7 +34,7 @@
 	<url-pattern>/servletConfigTest</url-pattern>
 </servlet-mapping> 
 
-
+<!-- 
 <filter>
 	<filter-name>flow1</filter-name>
 	<filter-class>com.edu.test.FlowFilterOne</filter-class>
@@ -57,5 +57,25 @@
 <filter-mapping>
 	<filter-name>flow2</filter-name>
 	<url-pattern>/*</url-pattern>
-</filter-mapping>
+</filter-mapping> -->
+<!-- <listener>
+	<listener-class>com.edu.test.TestRequestListener</listener-class>
+</listener> -->
+<!-- <listener>
+	<listener-class>com.edu.test.TestSessionListener</listener-class>
+</listener>
+<listener>
+	<listener-class>com.edu.test.TestSessionAttributeListener</listener-class>
+</listener> -->
+<!-- <listener>
+	<listener-class>com.edu.test.TestServletContextListener</listener-class>
+</listener> -->
+<error-page>
+	<error-code>405</error-code>
+	<location>/errorHandler</location>
+</error-page>
+<error-page>
+	<exception-type>java.lang.NullPointerException</exception-type>
+	<location>/errorHandler</location>
+</error-page>
 </web-app>

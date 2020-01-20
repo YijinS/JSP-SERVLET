@@ -13,12 +13,21 @@ public class ThirdServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
-			System.out.println("secondservlet!!");
 			
 			resp.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = resp.getWriter();
-			out.print("<html><head><title>test></title></head></html>");
-			out.print("<body><h1>좋은 하루</h1></body>");
+			int i = 1;
+			while(i <= 10) {
+				out.print("<br>number : " + i);
+				i++;
+				
+				try {
+					Thread.sleep(100); //0.1초
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			out.print("<br>실행완료");
 			out.close();
 	}
 }
